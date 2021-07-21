@@ -28,7 +28,7 @@ public class CSVTable {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -45,7 +45,7 @@ public class CSVTable {
         if (row -1 < values.size()) {
             return values.get(row-1)[col];
         }
-        throw new IndexOutOfBoundsException("Row index more than " + values.size() + 1);
+        throw new IllegalArgumentException("Row index more than " + values.size() + 1);
     }
 
     private int getIndexByName(String colName) {
