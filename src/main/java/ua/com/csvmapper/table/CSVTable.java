@@ -12,6 +12,10 @@ public class CSVTable {
     private String[] headers;
     private List<String[]> values;
 
+    public List<String[]> getValues(){
+        return values;
+    }
+
     public CSVTable(String URI) {
         try (BufferedReader reader = new BufferedReader(new FileReader(URI))) {
             String header;
